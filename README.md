@@ -12,7 +12,7 @@ Score    URL
 ## How to install
 
 ```
-$ git pull http://pathtoproject
+$ git clone https://github.com/bdesbiolles/fingerprinter.git
 $ pip install requests
 $ pip install beautifulsoup4
 $ cd fingerprinter
