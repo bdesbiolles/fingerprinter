@@ -13,6 +13,9 @@ Score    URL
 
 ```
 $ git clone https://github.com/bdesbiolles/fingerprinter.git
+```
+install beautifulsoup4 and requests modules either via pip or distribution packages.
+```
 $ pip install requests
 $ pip install beautifulsoup4
 $ cd fingerprinter

@@ -4,7 +4,7 @@
     "X-Powered-By": "(?:mod_rails|mod_rack|Phusion[\\._ ]Passenger)(?: \\(mod_rails/mod_rack\\))?(?: ?/?([\\d\\.]+))?"
   },
   "meta": {
-    "csrf-param": "authenticity_token",
+    "csrf-param": "authenticity_token"
   },
   "script": "/assets/",
   "link": "/assets/"
