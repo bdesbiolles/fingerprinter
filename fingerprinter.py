@@ -149,6 +149,8 @@ class Fingerprinter(object):
         """Return a list of the heuristics detected on the webpage."""
         detected_heuristics = set()
         logger.info("Analyzing webpage.")
+
+        # find RoR in header
         for name, regex in self.heuristics['headers'].items():
             if name in webpage.headers:
                 content = webpage.headers[name]
@@ -156,12 +158,14 @@ class Fingerprinter(object):
                     logger.info("Found header %s: %s", name, content)
                     detected_heuristics.add('headers: ' + name)
 
+        # find RoR in scripts
         for regex in self.heuristics['script']:
             for script in webpage.scripts:
                 if regex.search(script):
                     logger.info("Found script: src=\"%s\"", script)
                     detected_heuristics.add('script')
 
+        # find RoR in meta
         for name, regex in self.heuristics['meta'].items():
             if name in webpage.meta:
                 content = webpage.meta[name]
@@ -170,6 +174,7 @@ class Fingerprinter(object):
                                 name, content)
                     detected_heuristics.add('meta: ' + name)
 
+        # find Ror in link
         for regex in self.heuristics['link']:
             for link in webpage.links:
                 if regex.search(link):
